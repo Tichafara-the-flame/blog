@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<title>Martin's blog</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey">
+
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>MY BLOG</b></h1>
+  
+</header>
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <img src="https://cdn.pixabay.com/photo/2014/12/30/05/42/source-code-583537_1280.jpg" alt="Nature" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Concurrency in Web Development</b></h3>
+      <h5> Task 18 <span class="w3-opacity"></span></h5>
+    </div>
+
+    <div class="w3-container">
+      <p>Concurrency, in the context of a software application, is the handling of multiple users attempting to access the same data at the same time.</p>
+      <p>Concurrency can be implemented in various ways. Multiprocessing and
+        multithreading or an approach that uses both are common ways of implementing
+        concurrency.
+      <ul>
+        <li>A process, which is a program that has been loaded into memory along with all the
+      resources it needs to run. Every program needs certain essential resources, such as
+      registers, a program counter and a stack. A register is part of the CPU and is used
+      to hold data. 
+      Each instance of a running program is a process and there can be multiple
+      instances of a single program. Each process runs independently and is isolated
+      from other processes since they all have a separate memory address space.
+          </li>
+
+          <li>
+            A thread, which is the unit of execution within a process. A process can have one or more
+               threads but a thread cannot contain a process.
+             A process that contains more than one thread is known as a multi-threaded
+             process. Multi-threaded processes accomplish several things at (almost) the same
+             time. Threads are known as lightweight processes because they have their own
+             stack but can access shared data in the heap. The operational cost of
+              communication between the threads is low because threads share the same
+              address space as the process and other threads within the process.
+
+
+          </li>
+
+          <li>With Node, an I/O functions is non-blocking; it will continue in the background asynchronously 
+            and the program will simply move on to the next line of code without waiting for the I/O function to complete.
+             And this is why we pass in a ‘callback function’ to execute after our asynchronous I/O function completes.</li>
+
+             <li>Asynchronous programming is a powerful form of concurrency, but until recently, it required extremely complex code. 
+               The async and await support in modern languages 
+               make asynchronous programming almost as easy as synchronous (nonconcurrent) programming.</li>
+
+               <li>Concurrency and its relation to Rest API can happen in a case whwere a client first obtains a token for the update operation. 
+                 Once the token is received, it allows the client to perform the update. However, the changes will only apply if the token is still valid.
+                Because HTTP is stateless, it is possible to use only optimistic concurrency control.</li>
+
+                <li>JavaScript has a concurrency model based on an event loop, which is responsible for executing the code, 
+                  collecting and processing events, and executing queued sub-tasks. </li>
+                <li><strong> Oracle</strong> automatically provides read consistency to a query so that all the data that 
+                  the query sees comes from a single point in time (statement-level read consistency). 
+                  Oracle can also provide read consistency to all of the queries in a transaction (transaction-level read consistency)
+                  Oracle provides data concurrency and integrity between transactions using its locking mechanisms.
+                   Because the locking mechanisms of Oracle are tied closely to transaction control,
+                   application designers need only define transactions properly, and Oracle automatically manages locking.</li>
+
+                <li> <strong> MongoDB</strong> allows multiple clients to read and write the same data. In order to ensure consistency,
+                   it uses locking and other concurrency control measures to prevent multiple clients from modifying the same piece of data simultaneously. Together, 
+                  these mechanisms guarantee that all writes to a single document occur either in full or not at all 
+                  and that clients never see an inconsistent view of the data.
+
+                  Sharding improves concurrency by distributing collections over multiple mongod instances,
+                   allowing shard servers (i.e. mongos processes) to perform any number of operations concurrently to the various downstream mongod instances.
+                </li>
+
+      </ul></p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+         
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b></b> <span class="w3-tag"></span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+  <img src="https://cdn.pixabay.com/photo/2016/03/27/18/54/technology-1283624_1280.jpg" alt="Norway" style="width:100%">
+    <div class="w3-container">
+      <h3><b>“Big O notation basics for web developers</b></h3>
+      <h5>Task 19 <span class="w3-opacity"></span></h5>
+    </div>
+
+    <div class="w3-container">
+      <p>Big O, also called Landau Symbols, is a symbol used in math, complexity theory
+        and computer science. The O refers to “order of magnitude”. Order of magnitude
+        refers to the rate of growth of a function.
+        Big O notation is used for algorithm analysis.
+      </p>
+      <ul>
+          <li>O(N2) represents an algorithm whose performance is directly proportional to the square of the size of the input data set.This can be observed in the 
+            code below:
+            <br>
+          </li>
+          <li><strong>Example</strong> 
+            <br>
+
+            bool ContainsDuplicates(IList<string> elements)
+              {
+                <br>
+                  for (var outer = 0; outer < elements.Count; outer++)
+                  {
+                    <br>
+                      for (var inner = 0; inner < elements.Count; inner++)
+                      {
+                        <br>
+                          // Don't compare with self
+                          if (outer == inner) continue;
+                          <br>
+              
+                          if (elements[outer] == elements[inner]) return true;
+                      }
+                  }
+              
+                  return false;
+              }
+          
+          
+          </li>
+
+          <li>A linear search looks down a list, one item at a time, without jumping. In complexity terms this is an O(n) 
+            search - the time taken to search the list gets bigger at the same rate as the list does.
+
+            A binary search is when you start with the middle of a sorted list, and see whether that's
+             greater than or less than the value you're looking for, which determines whether the value
+              is in the first or second half of the list. Jump to the half way through the sublist, and compare again etc. 
+              This is pretty much how humans typically look up a word in a dictionary (although we use better heuristics, 
+              obviously - if you're looking for "cat" you don't start off at "M"). In complexity terms this is an O(log n) 
+            search - the number of search operations grows more slowly than the list does, because you're halving the "search space" with each operation.</li>
+
+              <br>
+
+              <li>
+               A linear search would ask:
+               <br>
+                list[0] == 'U'? No.
+                <br>
+                list[1] == 'U'? No.
+                <br>
+                list[2] == 'U'? No.
+                <br>
+                list[3] == 'U'? No.
+                <br>
+                list[4] == 'U'? No.
+                <br>
+                list[5] == 'U'? No.
+                <br>
+                ... list[20] == 'U'? Yes. Finished.
+                <br>
+                <br>
+                
+                The binary search would ask:
+                <br>
+                
+                Compare list[12] ('M') with 'U': Smaller, look further on. (Range=13-25)
+                <br>
+                Compare list[19] ('T') with 'U': Smaller, look further on. (Range=20-25)
+                <br>
+                Compare list[22] ('W') with 'U': Bigger, look earlier. (Range=20-21)
+                <br>
+                Compare list[20] ('U') with 'U': Found it! Finished.
+
+              </li>
+
+              <li>A Fibonacci sequence is a group of numbers where you determine the next
+                number in the sequence by adding the previous two numbers in the sequence
+                together.
+                </li>
+
+
+
+      </ul>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>  </b> <span class="w3-badge"></span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- END BLOG ENTRIES -->
+
+
+
+<!-- Blog entry -->
+<div class="w3-card-4 w3-margin w3-white">
+    <img src="/w3images/bridge.jpg" alt="" style="width:100%">
+      <div class="w3-container">
+        <h3><b>“Interfaces in object oriented programming
+          languages and prototype-based languages</b></h3>
+        <h5>Task 20<span class="w3-opacity"></span></h5>
+      </div>
+  
+      <div class="w3-container">
+        <p>An interface defines which methods and properties a
+          class must implement. The interface itself does not contain any code to
+          implement an object.
+          An interface defines which methods and properties a
+          class must implement. The interface itself does not contain any code to
+          implement an object
+        
+        <ul>
+
+            <li>JavaScript inheritance is based on objects, not classes. ... JavaScript is an extremely dynamically typed language. 
+             You can create an object with the proper methods, which would make it conform to the interface, and then undefine all the stuff that made it conform</li>
+
+             <li>
+              let person = {
+                <br>
+              
+                firstName: "John",
+                <br>
+              
+                lastName: "Wick",
+                <br>
+              
+                age: 52,
+                <br>
+              
+                eyeColor: "blue"
+                <br>
+              
+              };
+
+
+             </li>
+
+             <li>
+             There are three ways of emulating interfaces in JavaScript:
+              comments, 
+              attribute checking, and 
+              duck typing. 
+              No single technique is perfect, but a combination of all three will come close.
+             </li>
+
+
+             <li>
+              Strict mode changes both syntax and runtime behavior.
+               Changes generally fall into these categories: changes converting mistakes into errors 
+               (as syntax errors or at runtime), changes simplifying how the particular variable for a given use of a name is computed, 
+              changes simplifying eval and arguments, changes making it easier to write "secure" JavaScript, and changes anticipating future ECMAScript evolution.
+             </li>
+        </ul>
+        
+        <li>
+          TypeScript’s core principles is that type checking focuses on the shape that values have. 
+          In TypeScript, interfaces fill the role of naming these types, 
+          and are a powerful way of defining contracts within your code as well as contracts with code outside of your project.
+        </li>
+        <li>Existing working JavaScript code is also TypeScript code. 
+          The main benefit of TypeScript is that it can highlight unexpected behavior in your code, lowering the chance of bugs.</li>
+        
+        
+        
+        
+        </p>
+        <div class="w3-row">
+          <div class="w3-col m8 s12">
+           
+          </div>
+          <div class="w3-col m4 w3-hide-small">
+            <p><span class="w3-padding-large w3-right"><b></b> <span class="w3-badge"></span></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- END BLOG ENTRIES -->
+
+  <!-- Blog entry --
+  <div class="w3-card-4 w3-margin w3-white">
+    <img src="/w3images/bridge.jpg" alt="Norway" style="width:100%">
+      <div class="w3-container">
+        <h3><b>BLOG ENTRY</b></h3>
+        <h5>Title description, <span class="w3-opacity">April 2, 2014</span></h5>
+      </div>
+  
+      <div class="w3-container">
+        <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
+          tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        <div class="w3-row">
+          <div class="w3-col m8 s12">
+            <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+          </div>
+          <div class="w3-col m4 w3-hide-small">
+            <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-badge">2</span></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <-- END BLOG ENTRIES -->
+</div>
+
+<!-- Introduction menu -->
+<div class="w3-col l4">
+  <!-- About Card -->
+  <div class="w3-card w3-margin w3-margin-top">
+  <img src="/w3images/avatar_g.jpg" style="width:100%">
+    <div class="w3-container w3-white">
+      <h4><b>My Details</b></h4>
+      <p>My name is Martin Makoni and I am a full stack web developer.</p>
+    </div>
+  </div><hr>
+  
+  <!-- Posts -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Popular Posts</h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      <li class="w3-padding-16">
+        <img src="/w3images/workshop.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large"></span><br>
+        <span></span>
+      </li>
+      <li class="w3-padding-16">
+        <img src="/w3images/gondol.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large"></span><br>
+        <span></span>
+      </li> 
+      <li class="w3-padding-16">
+        <img src="/w3images/skies.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large"></span><br>
+        <span></span>
+      </li>   
+      <li class="w3-padding-16 w3-hide-medium w3-hide-small">
+        <img src="/w3images/rock.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large"></span><br>
+        <span></span>
+      </li>  
+    </ul>
+  </div>
+  <hr> 
+ 
+  <!-- Labels / tags -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Tags</h4>
+    </div>
+    <div class="w3-container w3-white">
+    <p><span class="w3-tag w3-black w3-margin-bottom">programming</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">web development</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">London</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">oop</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">user interface</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">DIY</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">mern stack</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">JavaScript</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Family</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">MongoDB</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">HyperionDev</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Shopping</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Express</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">React</span>
+    </p>
+    </div>
+  </div>
+  
+<!-- END Introduction Menu -->
+</div>
+
+<!-- END GRID -->
+</div><br>
+
+<!-- END w3-content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
+  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
+  
+</footer>
+
+</body>
+</html>
